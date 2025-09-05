@@ -1,0 +1,26 @@
+- type: loadoutGroup
+  id: SalvageSpecialistBackpack
+  parent: BaseBackpack
+  loadouts:
+  - SalvageSpecialistBackpack
+  - SalvageSpecialistSatchel
+  - SalvageSpecialistDuffel
+
+- type: loadoutGroup
+  id: SalvageSpecialistOuterClothing
+  parent: BaseOuterClothing
+  loadouts:
+  - SalvageSpecialistWintercoat
+
+- type: loadoutGroup
+  id: SalvageSpecialistShoes
+  parent: BaseShoes
+  loadouts:
+  - SalvageBoots
+  - CargoWinterBoots
+
+- type: loadoutGroup
+  id: SalvageSpecialistPets
+  parent: CommonPets
+  loadouts:
+  - PetSnail

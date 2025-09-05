@@ -1,0 +1,20 @@
+- type: roleLoadout
+  id: JobScientist
+  groups:
+  - GroupTankHarness
+  - ScientistHead
+  - CommonGlasses
+  # - Mask
+  - ScientistNeck
+  - ScienceGloves
+  - ScientistJumpsuit
+  - ScienceBackpack
+  - ScientistPDA
+  # - Belt
+  - ScientistOuterClothing
+  - ScientistShoes
+  # Backpack fills
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+  - CommonPets

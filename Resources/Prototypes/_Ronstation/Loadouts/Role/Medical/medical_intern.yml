@@ -1,0 +1,20 @@
+- type: roleLoadout
+  id: JobMedicalIntern
+  groups:
+  - GroupTankHarness
+  # - Head
+  - MedicalGlasses
+  # - Mask
+  # - Neck
+  # - Gloves
+  - MedicalInternJumpsuit
+  - MedicalBackpack
+  # - PDA
+  # - Belt
+  # - Outer Clothing
+  # - Shoes
+  # Backpack fills
+  - SurvivalMedical
+  - GroupSpeciesBreathToolMedical
+  - Trinkets
+  - CommonPets

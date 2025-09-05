@@ -1,0 +1,20 @@
+- type: roleLoadout
+  id: JobSalvageSpecialist
+  groups:
+  - GroupTankHarness
+  # - Head
+  - CommonGlasses
+  # - Mask
+  # - Neck
+  # - Gloves
+  # - Jumpsuit
+  - SalvageSpecialistBackpack
+  # - PDA
+  # - Belt
+  - SalvageSpecialistOuterClothing
+  - SalvageSpecialistShoes
+  # Backpack fills
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+  - SalvageSpecialistPets

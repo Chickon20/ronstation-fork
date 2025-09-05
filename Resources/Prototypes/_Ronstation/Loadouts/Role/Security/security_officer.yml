@@ -1,0 +1,19 @@
+- type: roleLoadout
+  id: JobSecurityOfficer
+  groups:
+  - SecurityOfficerHead
+  - SecurityGlasses
+  # - Mask
+  - SecurityNeck
+  # - Gloves
+  - SecurityOfficerJumpsuit
+  - SecurityBackpack
+  - SecurityOfficerPDA
+  - SecurityBelt
+  - SecurityOfficerOuterClothing
+  - SecurityShoes
+  # Backpack fills
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+  - Trinkets
+  - CommonPets

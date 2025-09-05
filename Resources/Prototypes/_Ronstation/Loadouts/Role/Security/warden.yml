@@ -1,0 +1,19 @@
+- type: roleLoadout
+  id: JobWarden
+  groups:
+  - WardenHead
+  - SecurityGlasses
+  # - Mask
+  - SecurityNeck
+  # - Gloves
+  - WardenJumpsuit
+  - SecurityBackpack
+  # - PDA
+  - SecurityBelt
+  - WardenOuterClothing
+  - SecurityShoes
+  # Backpack fills
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+  - Trinkets
+  - CommonPets

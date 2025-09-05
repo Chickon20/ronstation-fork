@@ -1,0 +1,20 @@
+- type: roleLoadout
+  id: JobChiefEngineer
+  groups:
+  - GroupTankHarness
+  - ChiefEngineerHead
+  # - Glasses
+  # - Mask
+  - ChiefEngineerNeck
+  # - Gloves
+  - ChiefEngineerJumpsuit
+  - EngineeringBackpack
+  # - PDA
+  # - Belt
+  - ChiefEngineerOuterClothing
+  - ChiefEngineerShoes
+  # Backpack fills
+  - SurvivalExtended
+  - GroupSpeciesBreathTool
+  - Trinkets
+  - CommonPets

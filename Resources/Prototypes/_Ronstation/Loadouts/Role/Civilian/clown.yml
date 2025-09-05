@@ -1,0 +1,20 @@
+- type: roleLoadout
+  id: JobClown
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  - ClownHead
+  - CommonGlasses
+  # - Mask
+  # - Neck
+  # - Gloves
+  - ClownJumpsuit
+  - ClownBackpack
+  # - PDA
+  # - Belt
+  - ClownOuterClothing
+  - ClownShoes
+  # Backpack fills
+  - SurvivalClown
+  - Trinkets
+  - CommonPets

@@ -1,0 +1,19 @@
+- type: roleLoadout
+  id: JobSecurityCadet
+  groups:
+  # - Head
+  # - Glasses
+  # - Mask
+  # - Neck
+  # - Gloves
+  - SecurityCadetJumpsuit
+  - SecurityBackpack
+  # - PDA
+  # - Belt
+  # - Outer Clothing
+  # - Shoes
+  # Backpack fills
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+  - Trinkets
+  - CommonPets

@@ -1,0 +1,20 @@
+- type: roleLoadout
+  id: JobBartender
+  groups:
+  - GroupTankHarness
+  - BartenderHead
+  - CommonGlasses
+  # - Mask
+  # - Neck
+  # - Gloves
+  - BartenderJumpsuit
+  - CommonBackpack
+  # - PDA
+  # - Belt
+  - BartenderOuterClothing
+  # - Shoes
+  # Backpack fills
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+  - CommonPets

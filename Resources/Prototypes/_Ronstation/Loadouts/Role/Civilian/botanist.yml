@@ -1,0 +1,20 @@
+- type: roleLoadout
+  id: JobBotanist
+  groups:
+  - GroupTankHarness
+  - BotanistHead
+  - CommonGlasses
+  # - Mask
+  # - Neck
+  # - Gloves
+  - BotanistJumpsuit
+  - BotanistBackpack
+  # - PDA
+  # - Belt
+  - BotanistOuterClothing
+  # - Shoes
+  # Backpack fills
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+  - CommonPets

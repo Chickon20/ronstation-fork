@@ -1,0 +1,19 @@
+- type: roleLoadout
+  id: JobDetective
+  groups:
+  - DetectiveHead
+  - SecurityGlasses
+  # - Mask
+  - DetectiveNeck
+  # - Gloves
+  - DetectiveJumpsuit
+  - SecurityBackpack
+  # - PDA
+  # - Belt
+  - DetectiveOuterClothing
+  - SecurityShoes
+  # Backpack fills
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+  - Trinkets
+  - CommonPets

@@ -1,0 +1,19 @@
+- type: roleLoadout
+  id: JobCaptain
+  groups:
+  - CaptainHead
+  - CommonGlasses
+  # - Mask
+  - CaptainNeck
+  # - Gloves
+  - CaptainJumpsuit
+  - CaptainBackpack
+  # - PDA
+  # - Belt
+  - CaptainOuterClothing
+  # - Shoes
+  # Backpack fills
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+  - CommandPets

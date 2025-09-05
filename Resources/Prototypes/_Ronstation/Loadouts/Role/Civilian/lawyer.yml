@@ -1,0 +1,21 @@
+- type: roleLoadout
+  id: JobLawyer
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  # - Head
+  - CommonGlasses
+  # - Mask
+  - LawyerNeck
+  # - Gloves
+  - LawyerJumpsuit
+  - CommonBackpack
+  # - PDA
+  # - Belt
+  # - Outer Clothing
+  # - Shoes
+  # Backpack fills
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+  - CommonPets

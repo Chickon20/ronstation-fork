@@ -1,0 +1,17 @@
+- type: roleLoadout
+  id: JobBlueshieldOfficer
+  groups:
+  - BlueshieldHead
+  # - Glasses
+  # - Mask
+  - BlueshieldNeck
+  # - Gloves
+  - BlueshieldJumpsuit
+  - BlueshieldBackpack
+  - BlueshieldOuterClothing
+  - BlueshieldShoes
+  # Backpack fills
+  - SurvivalSecurity
+  - GroupSpeciesBreathToolSecurity
+  - Trinkets
+  - CommandPets

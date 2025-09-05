@@ -1,0 +1,20 @@
+- type: roleLoadout
+  id: JobResearchAssistant
+  groups:
+  - GroupTankHarness
+  # - Head
+  - CommonGlasses
+  # - Mask
+  # - Neck
+  # - Gloves
+  - ResearchAssistantJumpsuit
+  - ScienceBackpack
+  # - PDA
+  # - Belt
+  # - Outer Clothing
+  # - Shoes
+  # Backpack fills
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+  - CommonPets

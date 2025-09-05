@@ -1,0 +1,21 @@
+- type: roleLoadout
+  id: JobBoxer
+  canCustomizeName: true
+  groups:
+  - GroupTankHarness
+  # - Head
+  - CommonGlasses
+  # - Mask
+  # - Neck
+  - BoxerGloves
+  - BoxerJumpsuit
+  - CommonBackpack
+  # - PDA
+  # - Belt
+  # - Outer Clothing
+  # - Shoes
+  # Backpack fills
+  - Survival
+  - GroupSpeciesBreathTool
+  - Trinkets
+  - CommonPets

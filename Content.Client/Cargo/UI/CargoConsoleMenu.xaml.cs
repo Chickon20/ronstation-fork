@@ -218,6 +218,7 @@ namespace Content.Client.Cargo.UI
                 var account = _protoManager.Index(order.Account);
 
                 var row = new CargoOrderRow
+
                 {
                     Order = order,
                     Icon = { Texture = _spriteSystem.Frame0(product) },
@@ -238,9 +239,12 @@ namespace Content.Client.Cargo.UI
                     }
                 };
                 row.Cancel.OnPressed += (args) => { OnOrderCanceled?.Invoke(args); };
-
                 // TODO: Disable based on access.
-                row.SetApproveVisible(orderConsole.Mode != CargoOrderConsoleMode.SendToPrimary);
+                row.SetApproveVisible(SharedCargoSystem.IsDepartmentAllowedToApprove(
+                    orderConsole.Department,
+                    orderConsole.Mode,
+                    row.Order.AllowedDepartments
+                    ));
                 row.Approve.OnPressed += (args) => { OnOrderApproved?.Invoke(args); };
                 Requests.AddChild(row);
             }

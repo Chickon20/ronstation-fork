@@ -1,3 +1,4 @@
+using System.Linq;
 using Content.Shared.Cargo.Components;
 using Content.Shared.Cargo.Prototypes;
 using Robust.Shared.Prototypes;
@@ -36,6 +37,35 @@ public abstract class SharedCargoSystem : EntitySystem
     }
 
     /// <summary>
+    /// Checks if a department is allowed to approve an order
+    /// </summary>
+    /// <param name="department"></param>
+    /// <param name="mode"></param>
+    /// <param name="allowedDepartments"></param>
+    /// <returns></returns>
+    public static bool IsDepartmentAllowedToApprove(
+        CargoConsoleDepartment department,
+        CargoOrderConsoleMode? mode = null,
+        CargoConsoleDepartment[]? allowedDepartments = null
+    )
+    {
+        if (mode == null)
+        {
+            return false;
+        }
+        if (!(mode == CargoOrderConsoleMode.SendToPrimary || mode == CargoOrderConsoleMode.DepartmentSpecific))
+        {
+            return true;
+        }
+
+        if (allowedDepartments == null)
+        {
+            return true;
+        }
+        return mode == CargoOrderConsoleMode.DepartmentSpecific && allowedDepartments.Contains(department);
+    }
+
+    /// <summary>
     /// For a station, creates a distribution between one the bank's account and the other accounts.
     /// The primary account receives the majority percentage listed on the bank account, with the remaining
     /// funds distributed to all accounts based on <see cref="StationBankAccountComponent.RevenueDistribution"/>
@@ -63,13 +93,13 @@ public enum CargoConsoleUiKey : byte
     Orders,
     Bounty,
     Shuttle,
-    Telepad
+    Telepad,
 }
 
 [NetSerializable, Serializable]
 public enum CargoPalletConsoleUiKey : byte
 {
-    Sale
+    Sale,
 }
 
 [Serializable, NetSerializable]

@@ -109,6 +109,9 @@ public sealed partial class CargoOrderConsoleComponent : Component
     [DataField]
     public CargoOrderConsoleMode Mode = CargoOrderConsoleMode.DirectOrder;
 
+    [DataField]
+    public CargoConsoleDepartment Department = CargoConsoleDepartment.Cargo;
+
     /// <summary>
     /// The time at which the console will be able to print a slip again.
     /// </summary>
@@ -164,6 +167,22 @@ public enum CargoOrderConsoleMode : byte
     /// Transfers the order to the primary account
     /// </summary>
     SendToPrimary,
+    /// <summary>
+    /// Gives every department rights to approve specific goods
+    /// </summary>
+    DepartmentSpecific,
+}
+
+[Serializable, NetSerializable]
+public enum CargoConsoleDepartment : byte
+{
+    Brig,
+    Cargo,
+    Engi,
+    Sci,
+    Sec,
+    Med,
+    Service,
 }
 
 /// <summary>

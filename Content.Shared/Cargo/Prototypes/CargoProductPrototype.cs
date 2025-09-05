@@ -1,4 +1,5 @@
 using Robust.Shared.Prototypes;
+using Content.Shared.Cargo.Components;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 using Robust.Shared.Utility;
@@ -94,5 +95,11 @@ namespace Content.Shared.Cargo.Prototypes
         /// </summary>
         [DataField]
         public ProtoId<CargoMarketPrototype> Group { get; private set; } = "market";
+
+        [DataField]
+        public CargoConsoleDepartment[]? AllowedDepartments { get; private set; } =
+        [
+            CargoConsoleDepartment.Cargo,
+        ];
     }
 }

@@ -142,9 +142,12 @@ namespace Content.Server.Cargo.Systems
         {
             if (args.Actor is not { Valid: true } player)
                 return;
-
-            if (component.Mode != CargoOrderConsoleMode.DirectOrder)
+            var orderData = new CargoOrderData();
+            if (!IsDepartmentAllowedToApprove(component.Department, component.Mode, orderData.AllowedDepartments))
+            {
+                ConsolePopup(args.Actor, Loc.GetString("action-not-allowed"));
                 return;
+            }
 
             if (!_accessReaderSystem.IsAllowed(player, uid))
             {

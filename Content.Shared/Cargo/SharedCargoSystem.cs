@@ -51,18 +51,21 @@ public abstract class SharedCargoSystem : EntitySystem
     {
         if (mode == null)
         {
+            Logger.Debug("Mode is null");
             return false;
         }
-        if (!(mode == CargoOrderConsoleMode.SendToPrimary || mode == CargoOrderConsoleMode.DepartmentSpecific))
+        if (mode == CargoOrderConsoleMode.DirectOrder)
         {
+            Logger.Debug("Mode is DirectOrder");
             return true;
         }
-
-        if (allowedDepartments == null)
+        if (mode == CargoOrderConsoleMode.DepartmentSpecific)
         {
-            return true;
+            Logger.Debug("Mode is DepartmentSpecific");
+            return allowedDepartments == null || allowedDepartments.Contains(department);
         }
-        return mode == CargoOrderConsoleMode.DepartmentSpecific && allowedDepartments.Contains(department);
+        Logger.Debug("Mode is not eligible");
+        return false;
     }
 
     /// <summary>

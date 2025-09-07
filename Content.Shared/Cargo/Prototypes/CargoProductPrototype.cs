@@ -96,6 +96,10 @@ namespace Content.Shared.Cargo.Prototypes
         [DataField]
         public ProtoId<CargoMarketPrototype> Group { get; private set; } = "market";
 
+        /// <summary>
+        ///     All the departments that can approve this order.
+        ///     This is optional and defaults to cargo.
+        /// </summary>
         [DataField]
         public CargoConsoleDepartment[]? AllowedDepartments { get; private set; } =
         [

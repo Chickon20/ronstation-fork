@@ -54,13 +54,18 @@ namespace Content.Shared.Cargo
         public  bool Approved;
         [DataField]
         public string? Approver;
-        public CargoConsoleDepartment[]? AllowedDepartments;
 
         /// <summary>
         /// Which account to deduct funds from when ordering
         /// </summary>
         [DataField]
         public ProtoId<CargoAccountPrototype> Account;
+
+        /// <summary>
+        /// Which Accounts can approve an order
+        /// </summary>
+        [DataField]
+        public string[]? AllowedAccounts;
 
         public CargoOrderData(
             int orderId,
@@ -70,8 +75,8 @@ namespace Content.Shared.Cargo
             int amount,
             string requester,
             string reason,
-            CargoConsoleDepartment[]? allowedDepartments,
-            ProtoId<CargoAccountPrototype> account)
+            ProtoId<CargoAccountPrototype> account,
+            string[]? allowedAccounts)
         {
             OrderId = orderId;
             ProductId = productId;
@@ -80,8 +85,8 @@ namespace Content.Shared.Cargo
             OrderQuantity = amount;
             Requester = requester;
             Reason = reason;
-            AllowedDepartments = allowedDepartments;
             Account = account;
+            AllowedAccounts = allowedAccounts;
         }
 
         public void SetApproverData(string? approver)

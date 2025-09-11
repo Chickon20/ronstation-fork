@@ -107,10 +107,7 @@ public sealed partial class CargoOrderConsoleComponent : Component
     /// The behaviour of the cargo console regarding orders
     /// </summary>
     [DataField]
-    public CargoOrderConsoleMode Mode = CargoOrderConsoleMode.DepartmentSpecific;
-
-    [DataField]
-    public CargoConsoleDepartment Department;
+    public CargoOrderConsoleMode Mode = CargoOrderConsoleMode.AccountSpecific;
 
     /// <summary>
     /// The time at which the console will be able to print a slip again.
@@ -170,19 +167,7 @@ public enum CargoOrderConsoleMode : byte
     /// <summary>
     /// Gives every department rights to approve specific goods
     /// </summary>
-    DepartmentSpecific,
-}
-
-[Serializable, NetSerializable]
-public enum CargoConsoleDepartment : byte
-{
-    Brig,
-    Cargo,
-    Engi,
-    Sci,
-    Sec,
-    Med,
-    Service,
+    AccountSpecific,
 }
 
 /// <summary>

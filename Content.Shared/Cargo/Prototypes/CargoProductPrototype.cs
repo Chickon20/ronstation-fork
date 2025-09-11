@@ -101,9 +101,9 @@ namespace Content.Shared.Cargo.Prototypes
         ///     This is optional and defaults to cargo.
         /// </summary>
         [DataField]
-        public CargoConsoleDepartment[]? AllowedDepartments { get; private set; } =
+        public string[]? AllowedAccounts { get; private set; } =
         [
-            CargoConsoleDepartment.Cargo,
+            "Cargo"
         ];
     }
 }

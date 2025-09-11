@@ -39,32 +39,28 @@ public abstract class SharedCargoSystem : EntitySystem
     /// <summary>
     /// Checks if a department is allowed to approve an order
     /// </summary>
-    /// <param name="department"></param>
+    /// <param name="account"></param>
     /// <param name="mode"></param>
-    /// <param name="allowedDepartments"></param>
+    /// <param name="allowedAccounts"></param>
     /// <returns></returns>
-    public static bool IsDepartmentAllowedToApprove(
-        CargoConsoleDepartment department,
+    public static bool IsAccountAllowedToApprove(
+        string? account,
         CargoOrderConsoleMode? mode = null,
-        CargoConsoleDepartment[]? allowedDepartments = null
+        string[]? allowedAccounts = null
     )
     {
         if (mode == null)
         {
-            Logger.Debug("Mode is null");
             return false;
         }
         if (mode == CargoOrderConsoleMode.DirectOrder)
         {
-            Logger.Debug("Mode is DirectOrder");
             return true;
         }
-        if (mode == CargoOrderConsoleMode.DepartmentSpecific)
+        if (mode == CargoOrderConsoleMode.AccountSpecific)
         {
-            Logger.Debug("Mode is DepartmentSpecific");
-            return allowedDepartments == null || allowedDepartments.Contains(department);
+            return allowedAccounts == null || allowedAccounts.Contains(account);
         }
-        Logger.Debug("Mode is not eligible");
         return false;
     }
 

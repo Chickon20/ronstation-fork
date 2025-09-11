@@ -62,10 +62,6 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
 
             var product = _prototypeManager.Index(productId);
 
-            if (product.AllowedDepartments == null)
-            {
-                break;
-            }
             if (!_cargoSystem.AddAndApproveOrder(
                     station!.Value,
                     product.Product,
@@ -77,8 +73,7 @@ public sealed class CargoGiftsRule : StationEventSystem<CargoGiftsRuleComponent>
                     Loc.GetString(component.Dest),
                     cargoDb,
                     component.Account,
-                    (station.Value, stationData),
-                    product.AllowedDepartments
+                    (station.Value, stationData)
             ))
             {
                 break;

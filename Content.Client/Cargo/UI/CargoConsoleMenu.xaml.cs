@@ -240,10 +240,10 @@ namespace Content.Client.Cargo.UI
                 };
                 row.Cancel.OnPressed += (args) => { OnOrderCanceled?.Invoke(args); };
                 // TODO: Disable based on access.
-                row.SetApproveVisible(SharedCargoSystem.IsDepartmentAllowedToApprove(
-                    orderConsole.Department,
+                row.SetApproveVisible(SharedCargoSystem.IsAccountAllowedToApprove(
+                    orderConsole.Account,
                     orderConsole.Mode,
-                    row.Order.AllowedDepartments
+                    row.Order.AllowedAccounts
                     ));
                 row.Approve.OnPressed += (args) => { OnOrderApproved?.Invoke(args); };
                 Requests.AddChild(row);

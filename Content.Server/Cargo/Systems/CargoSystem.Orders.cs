@@ -76,7 +76,7 @@ namespace Content.Server.Cargo.Systems
                 return;
 
             var orderId = GenerateOrderId(orderDatabase);
-            var data = new CargoOrderData(orderId, product.Product, product.Name, product.Cost, slip.OrderQuantity, slip.Requester, slip.Reason, null, slip.Account);
+            var data = new CargoOrderData(orderId, product.Product, product.Name, product.Cost, slip.OrderQuantity, slip.Requester, slip.Reason, slip.Account, null);
 
             if (!TryAddOrder(stationUid.Value, ent.Comp.Account, data, orderDatabase))
             {
@@ -143,7 +143,7 @@ namespace Content.Server.Cargo.Systems
             if (args.Actor is not { Valid: true } player)
                 return;
             var orderData = new CargoOrderData();
-            if (!IsDepartmentAllowedToApprove(component.Department, component.Mode, orderData.AllowedDepartments))
+            if (!IsAccountAllowedToApprove(component.Account, component.Mode, orderData.AllowedAccounts))
             {
                 ConsolePopup(args.Actor, Loc.GetString("action-not-allowed"));
                 return;
@@ -469,7 +469,7 @@ namespace Content.Server.Cargo.Systems
 
         private static CargoOrderData GetOrderData(CargoConsoleAddOrderMessage args, CargoProductPrototype cargoProduct, int id, ProtoId<CargoAccountPrototype> account)
         {
-            return new CargoOrderData(id, cargoProduct.Product, cargoProduct.Name, cargoProduct.Cost, args.Amount, args.Requester, args.Reason, cargoProduct.AllowedDepartments, account);
+            return new CargoOrderData(id, cargoProduct.Product, cargoProduct.Name, cargoProduct.Cost, args.Amount, args.Requester, args.Reason, account, cargoProduct.AllowedAccounts);
         }
 
         public int GetOutstandingOrderCount(Entity<StationCargoOrderDatabaseComponent> station, ProtoId<CargoAccountPrototype> account)
@@ -531,8 +531,7 @@ namespace Content.Server.Cargo.Systems
             string dest,
             StationCargoOrderDatabaseComponent component,
             ProtoId<CargoAccountPrototype> account,
-            Entity<StationDataComponent> stationData,
-            CargoConsoleDepartment[] allowedDepartments
+            Entity<StationDataComponent> stationData
         )
         {
             DebugTools.Assert(_protoMan.HasIndex<EntityPrototype>(spawnId));
@@ -546,8 +545,8 @@ namespace Content.Server.Cargo.Systems
                 qty,
                 sender,
                 description,
-                allowedDepartments,
-                account);
+                account,
+                null);
 
             // Approve it now
             order.SetApproverData(dest, sender);

@@ -136,6 +136,35 @@
     - Belt
 
 - type: entity
+  name: portable mining laser
+  parent: [BaseWeaponBattery, BaseCargoContraband]
+  id: WeaponMiningLaser
+  description: A portable medium duty mining laser that is compact and light enough to be held by hand.
+  components:
+  - type: Item
+    size: Ginormous
+  - type: MultiHandedItem
+  - type: ClothingSpeedModifier
+    walkModifier: 0.5
+    sprintModifier: 0.4
+  - type: HeldSpeedModifier
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Battery/mining_laser.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Gun
+    fireRate: 0.5
+    soundGunshot:
+      path: /Audio/Weapons/emitter.ogg
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletLaserSpreadMining
+    fireCost: 200
+  - type: Battery
+    maxCharge: 10000
+    startingCharge: 10000
+
+- type: entity
   name: svalinn laser pistol
   parent: [BaseWeaponPowerCellSmall, BaseSecurityContraband]
   id: WeaponLaserSvalinn

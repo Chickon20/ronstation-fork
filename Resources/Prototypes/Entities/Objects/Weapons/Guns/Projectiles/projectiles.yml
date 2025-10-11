@@ -1313,6 +1313,23 @@
     spread: 10
 
 - type: entity
+  name: mining focused laser barrage
+  id: BulletLaserSpreadMining
+  categories: [ HideSpawnMenu ]
+  parent: BulletLaser
+  components:
+  - type: ProjectileSpread
+    proto: BulletLaser
+    count: 8 #not a lot of heat damage, but deals quite a bit of structural damage
+    spread: 15
+  - type: Projectile
+    impactEffect: BulletImpactEffectOrangeDisabler
+    damage:
+      types:
+        Heat: 2
+        Structural: 120
+
+- type: entity
   name: disabling laser barrage
   id: BulletDisablerSmgSpread
   categories: [ HideSpawnMenu ]

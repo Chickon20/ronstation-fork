@@ -7,6 +7,9 @@
   cost: 300
   category: cargoproduct-category-name-engineering
   group: market
+  allowedAccounts:
+  - Engineering
+  - Cargo
 
 - type: cargoProduct
   id: EngineeringCableMv

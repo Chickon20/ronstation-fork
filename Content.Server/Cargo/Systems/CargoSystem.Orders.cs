@@ -146,6 +146,7 @@ namespace Content.Server.Cargo.Systems
             if (!IsAccountAllowedToApprove(component.Account, component.Mode, orderData.AllowedAccounts))
             {
                 ConsolePopup(args.Actor, Loc.GetString("action-not-allowed"));
+                PlayDenySound(uid, component);
                 return;
             }
 

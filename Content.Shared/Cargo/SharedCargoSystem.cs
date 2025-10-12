@@ -49,19 +49,12 @@ public abstract class SharedCargoSystem : EntitySystem
         string[]? allowedAccounts = null
     )
     {
-        if (mode == null)
+        return mode switch
         {
-            return false;
-        }
-        if (mode == CargoOrderConsoleMode.DirectOrder)
-        {
-            return true;
-        }
-        if (mode == CargoOrderConsoleMode.AccountSpecific)
-        {
-            return allowedAccounts == null || allowedAccounts.Contains(account);
-        }
-        return false;
+            CargoOrderConsoleMode.DirectOrder => true,
+            CargoOrderConsoleMode.AccountSpecific => allowedAccounts == null || allowedAccounts.Contains(account),
+            _ => false,
+        };
     }
 
     /// <summary>

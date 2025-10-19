@@ -242,9 +242,9 @@ namespace Content.Client.Cargo.UI
                 // TODO: Disable based on access.
                 row.SetApproveVisible(SharedCargoSystem.IsAccountAllowedToApprove(
                     orderConsole.Account,
-                    orderConsole.Mode,
-                    row.Order.AllowedAccounts
-                    ));
+                    new StationBankAccountComponent(),
+                    allowedAccounts: row.Order.AllowedAccounts,
+                    mode: orderConsole.Mode));
                 row.Approve.OnPressed += (args) => { OnOrderApproved?.Invoke(args); };
                 Requests.AddChild(row);
             }

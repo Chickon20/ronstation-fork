@@ -143,12 +143,6 @@ namespace Content.Server.Cargo.Systems
             if (args.Actor is not { Valid: true } player)
                 return;
             var orderData = new CargoOrderData();
-            if (!IsAccountAllowedToApprove(component.Account, component.Mode, orderData.AllowedAccounts))
-            {
-                ConsolePopup(args.Actor, Loc.GetString("action-not-allowed"));
-                PlayDenySound(uid, component);
-                return;
-            }
 
             if (!_accessReaderSystem.IsAllowed(player, uid))
             {
@@ -165,6 +159,13 @@ namespace Content.Server.Cargo.Systems
                 !TryGetOrderDatabase(station, out var orderDatabase))
             {
                 ConsolePopup(args.Actor, Loc.GetString("cargo-console-station-not-found"));
+                PlayDenySound(uid, component);
+                return;
+            }
+
+            if (!IsAccountAllowedToApprove(component.Account,bank, allowedAccounts: orderData.AllowedAccounts, mode: component.Mode))
+            {
+                ConsolePopup(args.Actor, Loc.GetString("action-not-allowed"));
                 PlayDenySound(uid, component);
                 return;
             }
